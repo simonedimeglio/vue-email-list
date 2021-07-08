@@ -7,14 +7,32 @@
         <title>VueJs - EMAIL LIST (API)</title>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     </head>
     <body>
 
-        <div id="app">
-            <button @click="getMails()">GENERA ELENCO</button>
-            <ul v-if="mails.length === 10" v-for="mail in mails">
-                <li>{{mail}}</li>
-            </ul>
+        <div class="container">
+            <div id="app">
+                <div class="title">
+                    <h3>Lista di 10 mail casuali</h3>
+                    <h5>Clicca il pulsante per generare la lista!</h5>
+                </div>
+                <div class="button-row">
+                    <button @click="getMails()"><i class="far fa-hand-point-down"></i></button>
+                </div>
+
+                <div class="mail-list">
+                    <ul v-if="mails.length === 10" v-for="mail in mails">
+                        <li>{{mail}}</li>
+                    </ul>
+                </div>
+                
+                
+            </div>
         </div>
 
         <script src="js/script.js"></script>
